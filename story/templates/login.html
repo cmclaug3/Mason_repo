@@ -11,5 +11,7 @@
 {% csrf_token %}
 <input type="submit" value="SUBMIT"/>
 </form>
-
+{% if user.is_authenticated %}
+<h5>You are logged in</h5>
+{% endif %}
 {% endblock content %}

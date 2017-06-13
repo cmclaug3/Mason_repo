@@ -37,7 +37,7 @@ def post_new(request):
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.author = request.user
+            #post.author = request.user
             post.published_date = timezone.now()
             post.save()
             context = {'posts': Post.objects.all()}
@@ -70,6 +70,7 @@ def login_view(request):
 
     context = {
         'form': form,
+        'msg': 'you are already logged in'
     }
     return render(request, 'login.html', context)
 
