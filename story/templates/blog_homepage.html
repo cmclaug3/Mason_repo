@@ -12,9 +12,12 @@
 
 		<HR>
 
+		{% if user.is_authenticated %}
+
 		<a href='/story/newpost/'> --> ADD A POST <-- </a>
 
 		<HR>
+		{% endif %}
 		<br>
 
 		{% for post in posts reversed %}
